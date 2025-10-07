@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NCSB — Connecting Ideas to Products</title>
+<meta name="description" content="Business & product consulting. NCSB connects ideas to manufacturable products and commercial outcomes.">
+<style>
+body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f1420;color:#e9edf3}
+.wrap{max-width:1000px;margin:0 auto;padding:32px}
+header{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;letter-spacing:.04em}
+.btn{background:#38d66b;color:#08120a;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:24px 0 8px}
+.card{background:#151b2a;border:1px solid #22304a;border-radius:14px;padding:18px;margin:18px 0}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3a56;background:#0f1627;color:#e9edf3}
+.small{color:#93a2b5;font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <header><div class="logo">NCSB</div><a class="btn" href="#contact">Contact</a></header>
+  <h1>Connecting Ideas to Products</h1>
+  <p>Business & management consultancy specialising in product strategy, sourcing, manufacturing and go-to-market across AU/NZ/EU.</p>
+  <div class="card"><h2>Services</h2>
+    <ul><li>Product strategy & validation</li><li>Sourcing & manufacturing</li><li>Market entry & retail onboarding</li><li>Operations (SKU/GTIN, listings, workflows)</li></ul>
+  </div>
+  <div id="contact" class="card">
+    <h2>Contact</h2>
+    <p class="small">Email: <a href="mailto:hello@ncsb.com.au">hello@ncsb.com.au</a></p>
+    <!-- Optional Formspree: replace YOUR_ID below once you create it -->
+    <form action="https://formspree.io/f/YOUR_ID" method="POST">
+      <input name="name" placeholder="Name" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+      <p><button class="btn" type="submit">Send</button></p>
+    </form>
+  </div>
+  <p class="small">© <span id="y"></span> NCSB</p>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>

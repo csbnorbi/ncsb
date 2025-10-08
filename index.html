@@ -1,37 +1,205 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NCSB — Connecting Ideas to Products</title>
-<meta name="description" content="Business & product consulting. NCSB connects ideas to manufacturable products and commercial outcomes.">
-<style>
-body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f1420;color:#e9edf3}
-.wrap{max-width:1000px;margin:0 auto;padding:32px}
-header{display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:700;letter-spacing:.04em}
-.btn{background:#38d66b;color:#08120a;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
-h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:24px 0 8px}
-.card{background:#151b2a;border:1px solid #22304a;border-radius:14px;padding:18px;margin:18px 0}
-input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3a56;background:#0f1627;color:#e9edf3}
-.small{color:#93a2b5;font-size:13px}
-</style></head><body>
-<div class="wrap">
-  <header><div class="logo">NCSB</div><a class="btn" href="#contact">Contact</a></header>
-  <h1>Connecting Ideas to Products</h1>
-  <p>Business & management consultancy specialising in product strategy, sourcing, manufacturing and go-to-market across AU/NZ/EU.</p>
-  <div class="card"><h2>Services</h2>
-    <ul><li>Product strategy & validation</li><li>Sourcing & manufacturing</li><li>Market entry & retail onboarding</li><li>Operations (SKU/GTIN, listings, workflows)</li></ul>
-  </div>
-  <div id="contact" class="card">
-    <h2>Contact</h2>
-    <p class="small">Email: <a href="mailto:hello@ncsb.com.au">hello@ncsb.com.au</a></p>
-    <!-- Optional Formspree: replace YOUR_ID below once you create it -->
-    <form action="https://formspree.io/f/YOUR_ID" method="POST">
-      <input name="name" placeholder="Name" required>
-      <input name="email" type="email" placeholder="Email" required>
-      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
-      <p><button class="btn" type="submit">Send</button></p>
-    </form>
-  </div>
-  <p class="small">© <span id="y"></span> NCSB</p>
-</div>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NCSB — Connecting Ideas to Products</title>
+  <meta name="description" content="NCSB helps founders and brands turn strong ideas into manufacturable, shippable and saleable products across AU/NZ/EU." />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="NCSB — Connecting Ideas to Products" />
+  <meta property="og:description" content="Product strategy, sourcing & manufacturing, market entry, and operations support." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ncsb.com.au/" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#0f172a;         /* slate-900 */
+      --muted:#475569;       /* slate-600 */
+      --line:#e2e8f0;        /* slate-200 */
+      --brand:#2563eb;       /* blue-600 */
+      --brand-ink:#ffffff;
+      --card:#ffffff;
+      --shadow:0 8px 24px rgba(2,6,23,.06);
+      --radius:14px;
+      --wrap:1080px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink); background:var(--bg);
+    }
+    .wrap{max-width:var(--wrap); margin:0 auto; padding:28px 20px}
+    header{position:sticky; top:0; z-index:10; background:rgba(255,255,255,.9); backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid var(--line)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+    .logo{font-weight:800; letter-spacing:.04em}
+    .nav a{color:var(--muted); text-decoration:none; margin-left:18px}
+    .nav a:hover{color:var(--ink)}
+    .btn{display:inline-block; background:var(--brand); color:var(--brand-ink); padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600}
+    .btn.secondary{background:#eef2ff; color:#3730a3}
+    .hero{padding:64px 0 28px}
+    .hero h1{font-size:clamp(30px,5vw,46px); line-height:1.1; margin:0 0 12px}
+    .hero p{color:var(--muted); max-width:70ch; margin:0 0 20px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:8px 0 2px}
+    .badge{background:#f1f5f9; color:#0f172a; font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid var(--line)}
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    h2{font-size:22px; margin:32px 0 8px}
+    h3{margin:0 0 6px; font-size:18px}
+    ul.clean{list-style:none; padding:0; margin:0}
+    ul.clean li{padding-left:22px; position:relative; margin:8px 0; color:var(--muted)}
+    ul.clean li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--brand); font-weight:700}
+    .two{display:grid; gap:18px; grid-template-columns:1.2fr .8fr}
+    @media (max-width:900px){ .two{grid-template-columns:1fr} }
+    footer{border-top:1px solid var(--line); margin-top:32px; color:#64748b; font-size:14px}
+    input,textarea{
+      width:100%; padding:12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink)
+    }
+    form .btn{margin-top:10px}
+    .note{font-size:13px; color:#64748b}
+    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:#eff6ff; color:#1d4ed8; border:1px solid #dbeafe; font-size:12px}
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header>
+    <div class="wrap nav">
+      <div class="logo">NCSB</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <span class="pill">Consulting • Product • Operations</span>
+      <h1>Connecting ideas to manufacturable, shippable and saleable products.</h1>
+      <p>We partner with founders and brands across AU/NZ/EU to turn strong ideas into real-world outcomes—from strategy and sourcing to market entry and ongoing operations.</p>
+      <div class="badges">
+        <span class="badge">Product strategy</span>
+        <span class="badge">Sourcing & QC</span>
+        <span class="badge">Compliance</span>
+        <span class="badge">Listings & GTIN</span>
+        <span class="badge">Retail onboarding</span>
+      </div>
+      <p style="margin-top:14px">
+        <a class="btn" href="#contact">Start a conversation</a>
+        <a class="btn secondary" href="#services" style="margin-left:8px">What we do</a>
+      </p>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Product Strategy</h3>
+          <p class="note">Problem framing, value proposition, pricing, and validation.</p>
+          <ul class="clean">
+            <li>Opportunity sizing and business case</li>
+            <li>Costing & margins (landed and retail)</li>
+            <li>Roadmap and portfolio planning</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sourcing & Manufacturing</h3>
+          <p class="note">Factory discovery, audits, QA/QC, and logistics.</p>
+          <ul class="clean">
+            <li>Supplier shortlists & negotiations</li>
+            <li>Samples, golden set, and scale-up</li>
+            <li>Freight, customs & 3PL handoff</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Market Entry</h3>
+          <p class="note">Channel strategy, retail onboarding, and listings.</p>
+          <ul class="clean">
+            <li>Brand & positioning</li>
+            <li>GTIN/GS1 setup, GPC mapping, compliance</li>
+            <li>Retailer submissions & merchandising</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Operations</h3>
+          <p class="note">The systems that keep things humming.</p>
+          <ul class="clean">
+            <li>SKU architecture and naming</li>
+            <li>PIM/ERP workflow design</li>
+            <li>Dashboards & repeatable playbooks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities / Sectors -->
+    <section id="capabilities">
+      <h2>Capabilities</h2>
+      <div class="grid">
+        <div class="card"><h3>Home improvement & DIY</h3><p class="note">Flooring, decking, wall systems, acoustic panels.</p></div>
+        <div class="card"><h3>Consumer goods</h3><p class="note">Packaging, compliance, and e-commerce readiness.</p></div>
+        <div class="card"><h3>B2B enablement</h3><p class="note">Channel partner playbooks and sell-in assets.</p></div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="approach" class="two">
+      <div class="card">
+        <h2>How we work</h2>
+        <ul class="clean">
+          <li><strong>Discovery → Plan:</strong> rapid scoping, risks, and success metrics.</li>
+          <li><strong>Design → Validate:</strong> samples, costings, and compliance pathways.</li>
+          <li><strong>Build → Ship:</strong> supplier agreements, QA/QC, logistics and launch.</li>
+          <li><strong>Operate → Improve:</strong> dashboards, feedback loops, and scale.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Why NCSB</h2>
+        <ul class="clean">
+          <li>Hands-on operators, not slideware.</li>
+          <li>End-to-end view: product, operations, and commercial.</li>
+          <li>Trusted network across AU/NZ/EU manufacturing and retail.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Let’s talk</h2>
+      <div class="two">
+        <div class="card">
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <input name="name" placeholder="Name" required />
+            <div style="height:10px"></div>
+            <input name="email" type="email" placeholder="Email" required />
+            <div style="height:10px"></div>
+            <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+            <button class="btn" type="submit">Send message</button>
+            <p class="note">Prefer email? <a href="mailto:hello@ncsb.com.au">hello@ncsb.com.au</a></p>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Availability</h3>
+          <p class="note">We take on a limited number of projects each quarter to stay close to delivery. Share a few lines about your goals and timelines—we’ll reply quickly.</p>
+          <h3>Where</h3>
+          <p class="note">Australia • New Zealand • EU — remote-first, factory-onsite as needed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    © <span id="y"></span> NCSB — ABN/Company details on request
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -43,7 +43,7 @@
       <div class="logo">
   <img src="https://raw.githubusercontent.com/csbnorbi/ncsb/refs/heads/main/NCSB%20logo.png" 
      alt="NCSB Logo" 
-     style="width:150px; height:auto;">
+     style="width:125px; height:auto;">
 </div>
       <nav>
         <a href="#about">About</a>
@@ -61,14 +61,56 @@
     </section>
 
     <!-- ABOUT / DIRECTOR -->
-    <section id="about">
-      <div class="card">
-        <h2>About NCSB</h2>
-        <p>NCSB helps teams find and deliver the right products — quickly and pragmatically. We operate end-to-end: scout, validate, source, and move from concept to first shipment.</p>
-        <img src="https://raw.githubusercontent.com/csbnorbi/ncsb/e4a42784e34fb744b8cdf250808eb8c38aaaa5ff/Norbert%20Csiki-Bege%20resized.jpg" alt="Norbert Csiki-Bege" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
-        <p><strong>Norbert Csiki-Bege</strong> is an importer and product scout with a background in engineering and product operations, working closely with factories, compliance, and go-to-market partners across Australia, New Zealand, and Europe.</p>
+    <section class="about">
+  <div class="container">
+    <h2>About NCSB</h2>
+    <p>
+      NCSB helps teams find and deliver the right products — quickly and pragmatically. 
+      We operate end-to-end: scout, validate, source, and move from concept to first shipment.
+    </p>
+    
+    <div class="profile">
+      <img src="https://raw.githubusercontent.com/csbnorbi/ncsb/b0d13cbfd4db81eab99abf1ff5f72712b30d5377/NCSB%20logo.png" 
+           alt="Norbert Csiki-Bege Headshot" class="profile-img">
+      <div class="profile-text">
+        <p>
+          <strong>Norbert Csiki-Bege</strong> is an importer and product scout with a background 
+          in engineering and product operations, working closely with factories, compliance, 
+          and go-to-market partners across Australia, New Zealand, and Europe.
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<style>
+.about {
+  text-align: center;
+  padding: 60px 20px;
+}
+.about .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-text {
+  max-width: 500px;
+  text-align: left;
+}
+</style>
 
     <!-- CONTACT -->
     <section id="contact">
